@@ -1,0 +1,67 @@
+#include <iostream>
+using namespace std;
+
+// Base class 1
+class Student {
+protected:
+    int rollNumber;
+public:
+    void getRollNumber(int r) {
+        rollNumber = r;
+    }
+    void putRollNumber() {
+        cout << "Roll Number: " << rollNumber << endl;
+    }
+};
+
+// Base class 2
+class Test : public Student {
+protected:
+    float sub1, sub2;
+public:
+    void getMarks(float s1, float s2) {
+        sub1 = s1;
+        sub2 = s2;
+    }
+    void putMarks() {
+        cout << "Marks in Subject 1: " << sub1 << endl;
+        cout << "Marks in Subject 2: " << sub2 << endl;
+    }
+};
+
+// Another base class
+class Sports {
+protected:
+    float score;
+public:
+    void getScore(float s) {
+        score = s;
+    }
+    void putScore() {
+        cout << "Sports Score: " << score << endl;
+    }
+};
+
+// Derived class (Hybrid Inheritance)
+class Result : public Test, public Sports {
+    float total;
+public:
+    void display() {
+        total = sub1 + sub2 + score;
+        putRollNumber();
+        putMarks();
+        putScore();
+        cout << "Total Score: " << total << endl;
+    }
+};
+
+// Main function
+int main() {
+    Result student1;
+    student1.getRollNumber(101);
+    student1.getMarks(88.5, 92.0);
+    student1.getScore(9.0);
+    student1.display();
+
+    return 0;
+}
