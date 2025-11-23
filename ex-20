@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+class patient{
+    public:
+    int patientID;
+    string name;
+    string disease;
+    //Function defined inside the class 
+    void setpatient(int id,string n,string d){
+        patientID=id;
+        name=n;
+        disease=d;
+    }
+};
+//Function defined inside,defined outside 
+void displaypatient(){
+};
+//Function defined outside the class 
+    void patient :: displaypatient() {
+        cout<<"patient ID:"<<patientID
+        <<"Name:"<<name
+        <<"Disease:"<<disease<<endl;
+    }
+int main(){
+    patient p1,p2;
+    //using inside function to set details 
+    p1.setpatient(301,"Arjun","Fever");
+    p2.setpatient(302,"Meena","Diabetes");
+    //using outside function to display
+    p1.setpatient();
+    p2.setpatient();
+    return 0;
+}
