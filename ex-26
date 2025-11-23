@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+//declare a class
+class Wall{
+    private:
+    double length{5.5};
+    public:
+    //default constructor to initialize values
+    Wall()=default;
+    void print_length(){
+        cout<<"length="<<length<<endl;
+    }
+};
+int main(){
+    Wall wall1;
+    wall1.print_length();
+    return 0;
+}
