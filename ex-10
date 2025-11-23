@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+class Animal{
+    public:
+    void eat(){
+        cout<<"This animal eats food."<<endl;
+    }
+};
+
+//derived classs 1
+class Dog : public Animal{
+    public:
+    void bark(){
+        cout<<"The dog barks:Woof!Woof!"<<endl;
+    }
+};
+
+//derived class 2
+class Cat : public Animal{
+    public:
+    void meow(){
+        cout<<"The cat meows:Meow!Meow!"<<endl;
+    }
+};
+
+//derived class 3
+class Horse : public Animal{
+    public:
+    void neigh(){
+        cout<<"The horse neighs : Neighhhhhhh!!!!"<<endl;
+    }
+};
+
+//main funtion
+int main(){
+    Dog dog;
+    Cat cat;
+    Horse horse;
+
+    cout<<"Dog:"<<endl;
+    dog.eat();  //inherited from animal
+    dog.bark();  //specific to dog
+
+    cout<<"\nCat:"<<endl;
+    cat.eat(); //inherited from animal
+    cat.meow();  //specific to cat
+
+    cout<<"\nHorse:"<<endl;
+    horse.eat();  //inherited from animal;
+    horse.neigh();  //specific to horse
+
+    return 0;
+}
