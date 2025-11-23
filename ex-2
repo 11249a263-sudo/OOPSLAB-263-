@@ -1,0 +1,18 @@
+#include<iostream>
+using namespace std;
+class Box{
+    private:
+    int length;
+    public:
+    Box(int l):length(l){}
+    friend void showLength(Box b);
+};
+void showLength(){
+    cout<<"Length of box="<< b.length<<endl;
+};
+int main(){
+    Box box1(25);
+    showLength(box1);
+    return 0;
+
+}
